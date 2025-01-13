@@ -34,24 +34,6 @@
   background: #a0a0a0;
 }
 
-.text-headColor {
-  background: linear-gradient(to right, #efefef 2%, #898989 28%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.text-greenWhite {
-  background: linear-gradient(to right, #65b744 0%, #ffffff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 @layer components {
   .grid-pattern {
     z-index: -999;

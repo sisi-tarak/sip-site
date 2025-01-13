@@ -157,7 +157,7 @@ const Navbar = () => {
                       <Button
                         key={navlink.id}
                         onClick={() => handleNavigation(navlink)}
-                        className="capitalize text-white font-normal font-ubuntu text-[16px] leading-[26px] hover:text-navlinkHoverColor transition-all duration-300 ease-in-out mx-2 "
+                        className="capitalize text-headColor font-normal font-ubuntu text-[16px] leading-[26px] hover:text-navlinkHoverColor transition-all duration-300 ease-in-out mx-2 "
                       >
                         {navlink.text}
                       </Button>
@@ -196,7 +196,7 @@ const Navbar = () => {
               className="text-textColor"
               sx={{
                 "& .css-rizt0-MuiTypography-root": {
-                  fontFamily: "Outfit Variable",
+                  fontFamily: "Ubuntu",
                   fontSize: "14px",
                   lineHeight: "26px",
                   textTransform: "capitalize",
@@ -216,8 +216,8 @@ const Navbar = () => {
               <Button
                 variant="contained"
                 sx={{
-                  color: "#060606",
-                  backgroundColor: "#62ba47",
+                  color: "#1a2b31",
+                  backgroundColor: "#16cf95",
                   width: "80%",
                   marginX: "auto",
                   paddingY: "10px",
@@ -225,14 +225,14 @@ const Navbar = () => {
                   borderRadius: "8px",
                   marginTop: "15px",
                   fontWeight: "medium",
-                  fontFamily: "Outfit Variable",
+                  fontFamily: "Ubuntu",
                   fontSize: "14px",
                   lineHeight: "24px",
                   textTransform: "capitalize",
                 }}
                 onClick={handleLogin}
               >
-                Let's Talk
+                Login
               </Button>
             </Drawer>
           </Container>

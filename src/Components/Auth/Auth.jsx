@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
+import logoImg from "../../assets/logo.png";
 
 const Tabs = ({ children, defaultValue, onValueChange }) => {
   return <div className="w-full max-w-md">{children}</div>;
@@ -41,15 +42,19 @@ const TabsContent = ({ value, activeTab, children }) => {
 };
 
 const Card = ({ children, className }) => {
-  return <div className={`rounded-lg shadow-lg ${className}`}>{children}</div>;
+  return (
+    <div className={`rounded-lg shadow-lg font-ubuntu ${className}`}>
+      {children}
+    </div>
+  );
 };
 
 const CardHeader = ({ children }) => {
-  return <div className="mb-6">{children}</div>;
+  return <div className="mb-6 font-ubuntu">{children}</div>;
 };
 
 const CardContent = ({ children }) => {
-  return <div>{children}</div>;
+  return <div className="font-ubuntu">{children}</div>;
 };
 
 const Input = ({ type, placeholder, value, onChange }) => {
@@ -59,7 +64,7 @@ const Input = ({ type, placeholder, value, onChange }) => {
       placeholder={placeholder}
       value={value}
       onChange={onChange}
-      className="w-full p-2 rounded border border-gray-300 bg-transparent text-headColor placeholder-gray-500"
+      className="w-full p-2 rounded border border-gray-300 bg-transparent font-ubuntu text-headColor placeholder-gray-500"
     />
   );
 };
@@ -69,7 +74,7 @@ const Button = ({ disabled, onClick, children }) => {
     <button
       disabled={disabled}
       onClick={onClick}
-      className="w-full p-2 mt-4 bg-headColor text-brandsBgColor rounded hover:opacity-90 disabled:opacity-50 transition-opacity"
+      className="w-full p-2 mt-4 bg-headColor text-logoBlueColor font-ubuntu rounded hover:opacity-90 disabled:opacity-50 transition-opacity"
     >
       {children}
     </button>
@@ -101,12 +106,14 @@ const Auth = () => {
     <div className="flex flex-col min-h-screen text-headColor font-ubuntu">
       <header className="px-4 lg:px-6 h-14 flex items-center border-b border-headColor/20">
         <Link to="/" className="flex items-center justify-center">
-          <GraduationCap className="h-8 w-8 mr-4" />
-          <span className="font-extrabold text-xl tracking-widest">Student Incubator Program - SVCE</span>
+          <img src={logoImg} className="h-16 w-auto mr-1" />
+          <span className="font-extrabold text-xl tracking-widest">
+            Student Incubator Program - SVCE
+          </span>
         </Link>
       </header>
 
-      <div className="flex items-center justify-center flex-grow p-4">
+      <div className="flex items-center justify-center flex-grow p-4 font-ubuntu">
         <Tabs defaultValue="signin" onValueChange={setActiveTab}>
           <TabsList className="transition-all duration-300 ease-in-out">
             <TabsTrigger

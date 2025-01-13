@@ -1,12 +1,11 @@
 import { Container } from "@mui/material";
 import React from "react";
+import Cover from "../Cover/Cover";
 
 const Homepage = () => {
   return (
     <>
-      <Container maxWidth="lg" className="h-screen">
-        <h1 className="text-3xl text-headColor">Homepage</h1>
-      </Container>
+      <Cover />
     </>
   );
 };

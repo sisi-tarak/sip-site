@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoImg from "../../assets/logo.png";
+import Fade from "../Animations/Fade";
 
 const Tabs = ({ children, defaultValue, onValueChange }) => {
   return <div className="w-full max-w-md">{children}</div>;
@@ -115,118 +116,122 @@ const Auth = () => {
 
       <div className="flex items-center justify-center flex-grow p-4 font-ubuntu">
         <Tabs defaultValue="signin" onValueChange={setActiveTab}>
-          <TabsList className="transition-all duration-300 ease-in-out">
-            <TabsTrigger
-              value="signin"
-              active={activeTab === "signin"}
-              onClick={setActiveTab}
-            >
-              Sign In
-            </TabsTrigger>
-            <TabsTrigger
-              value="signup"
-              active={activeTab === "signup"}
-              onClick={setActiveTab}
-            >
-              Sign Up
-            </TabsTrigger>
-          </TabsList>
+          <Fade blur={true}>
+            <TabsList className="transition-all duration-300 ease-in-out">
+              <TabsTrigger
+                value="signin"
+                active={activeTab === "signin"}
+                onClick={setActiveTab}
+              >
+                Sign In
+              </TabsTrigger>
+              <TabsTrigger
+                value="signup"
+                active={activeTab === "signup"}
+                onClick={setActiveTab}
+              >
+                Sign Up
+              </TabsTrigger>
+            </TabsList>
 
-          <div className="relative h-[400px]">
-            <TabsContent
-              value="signin"
-              activeTab={activeTab}
-              className="transition-all duration-300 ease-in-out"
-            >
-              <Card className="p-6 space-y-4 bg-brandsBgColor text-headColor">
-                <CardHeader>
-                  <h1 className="text-xl font-bold">Sign in to your account</h1>
-                  <p className="text-sm mt-1">
-                    Enter your email and password to access your account
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSignIn} className="space-y-4">
-                    <Input
-                      type="email"
-                      placeholder="Email"
-                      value={signInForm.userEmail}
-                      onChange={(e) =>
-                        setSignInForm({
-                          ...signInForm,
-                          userEmail: e.target.value,
-                        })
-                      }
-                    />
-                    <Input
-                      type="password"
-                      placeholder="Password"
-                      value={signInForm.password}
-                      onChange={(e) =>
-                        setSignInForm({
-                          ...signInForm,
-                          password: e.target.value,
-                        })
-                      }
-                    />
-                    <Button disabled={!isSignInValid}>Sign In</Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </TabsContent>
-            <TabsContent
-              value="signup"
-              activeTab={activeTab}
-              className="transition-all duration-300 ease-in-out"
-            >
-              <Card className="p-6 space-y-4 bg-brandsBgColor text-headColor">
-                <CardHeader>
-                  <h1 className="text-xl font-bold">Create a new account</h1>
-                  <p className="text-sm mt-1">
-                    Enter your details to get started
-                  </p>
-                </CardHeader>
-                <CardContent>
-                  <form onSubmit={handleSignUp} className="space-y-4">
-                    <Input
-                      type="text"
-                      placeholder="Username"
-                      value={signUpForm.userName}
-                      onChange={(e) =>
-                        setSignUpForm({
-                          ...signUpForm,
-                          userName: e.target.value,
-                        })
-                      }
-                    />
-                    <Input
-                      type="email"
-                      placeholder="Email"
-                      value={signUpForm.userEmail}
-                      onChange={(e) =>
-                        setSignUpForm({
-                          ...signUpForm,
-                          userEmail: e.target.value,
-                        })
-                      }
-                    />
-                    <Input
-                      type="password"
-                      placeholder="Password"
-                      value={signUpForm.password}
-                      onChange={(e) =>
-                        setSignUpForm({
-                          ...signUpForm,
-                          password: e.target.value,
-                        })
-                      }
-                    />
-                    <Button disabled={!isSignUpValid}>Sign Up</Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </TabsContent>
-          </div>
+            <div className="relative h-[400px]">
+              <TabsContent
+                value="signin"
+                activeTab={activeTab}
+                className="transition-all duration-300 ease-in-out"
+              >
+                <Card className="p-6 space-y-4 bg-brandsBgColor text-headColor">
+                  <CardHeader>
+                    <h1 className="text-xl font-bold">
+                      Sign in to your account
+                    </h1>
+                    <p className="text-sm mt-1">
+                      Enter your email and password to access your account
+                    </p>
+                  </CardHeader>
+                  <CardContent>
+                    <form onSubmit={handleSignIn} className="space-y-4">
+                      <Input
+                        type="email"
+                        placeholder="Email"
+                        value={signInForm.userEmail}
+                        onChange={(e) =>
+                          setSignInForm({
+                            ...signInForm,
+                            userEmail: e.target.value,
+                          })
+                        }
+                      />
+                      <Input
+                        type="password"
+                        placeholder="Password"
+                        value={signInForm.password}
+                        onChange={(e) =>
+                          setSignInForm({
+                            ...signInForm,
+                            password: e.target.value,
+                          })
+                        }
+                      />
+                      <Button disabled={!isSignInValid}>Sign In</Button>
+                    </form>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+              <TabsContent
+                value="signup"
+                activeTab={activeTab}
+                className="transition-all duration-300 ease-in-out"
+              >
+                <Card className="p-6 space-y-4 bg-brandsBgColor text-headColor">
+                  <CardHeader>
+                    <h1 className="text-xl font-bold">Create a new account</h1>
+                    <p className="text-sm mt-1">
+                      Enter your details to get started
+                    </p>
+                  </CardHeader>
+                  <CardContent>
+                    <form onSubmit={handleSignUp} className="space-y-4">
+                      <Input
+                        type="text"
+                        placeholder="Username"
+                        value={signUpForm.userName}
+                        onChange={(e) =>
+                          setSignUpForm({
+                            ...signUpForm,
+                            userName: e.target.value,
+                          })
+                        }
+                      />
+                      <Input
+                        type="email"
+                        placeholder="Email"
+                        value={signUpForm.userEmail}
+                        onChange={(e) =>
+                          setSignUpForm({
+                            ...signUpForm,
+                            userEmail: e.target.value,
+                          })
+                        }
+                      />
+                      <Input
+                        type="password"
+                        placeholder="Password"
+                        value={signUpForm.password}
+                        onChange={(e) =>
+                          setSignUpForm({
+                            ...signUpForm,
+                            password: e.target.value,
+                          })
+                        }
+                      />
+                      <Button disabled={!isSignUpValid}>Sign Up</Button>
+                    </form>
+                  </CardContent>
+                </Card>
+              </TabsContent>
+            </div>
+          </Fade>
         </Tabs>
       </div>
     </div>

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { GraduationCap } from "lucide-react";
 import { Link } from "react-router-dom";
 import logoImg from "../../assets/logo.png";
 import Fade from "../Animations/Fade";

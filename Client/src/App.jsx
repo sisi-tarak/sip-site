@@ -13,21 +13,20 @@ const App = () => {
 
   return (
     <Provider>
-      <Router>
-        <Routes>
-          <Route
-            path="/auth"
-            element={
-              <RouteGuard
-                element={<Auth />}
-                authenticated={auth?.authenticate}
-                user={auth?.user}
-              />
-            }
-          />
+      <Routes>
+        <Route
+          path="/auth"
+          element={
+            <RouteGuard
+              element={<Auth />}
+              authenticated={auth?.authenticate}
+              user={auth?.user}
+            />
+          }
+        />
 
-          {/* <Navbar /> */}
-          {/* <Route
+        {/* <Navbar /> */}
+        {/* <Route
             path="/instructor"
             element={
               <RouteGuard
@@ -67,9 +66,9 @@ const App = () => {
               />
             }
           > */}
-          <Route path="" element={<Homepage />} />
-          <Route path="home" element={<Homepage />} />
-          {/* <Route path="home" element={<StudentHomePage />} />
+        <Route path="" element={<Homepage />} />
+        <Route path="home" element={<Homepage />} />
+        {/* <Route path="home" element={<StudentHomePage />} />
             <Route path="courses" element={<StudentViewCoursesPage />} />
             <Route
               path="course/details/:id"
@@ -85,9 +84,8 @@ const App = () => {
               element={<StudentViewCourseProgressPage />}
             /> 
           </Route> */}
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Router>
+        <Route path="*" element={<NotFound />} />
+      </Routes>
     </Provider>
   );
 };

@@ -1,4 +1,4 @@
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/Components/ui/card";
 import { captureAndFinalizePaymentService } from "@/services";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
